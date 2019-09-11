@@ -1,0 +1,66 @@
+.AboutMe {
+    color: black;
+    line-height: 1.5rem;
+    padding: 2.5rem;
+    border: 1px solid whitesmoke;
+    background-color: rgba(245, 245, 245, 0.90);
+    border-radius: 10px;
+    height: 65vh;
+    width: 50vw;
+    font-size: 1vw;
+}
+
+#ReactBackgroundSlider > figure{
+    height: 80% !important;
+    top: 10vh !important;
+}
+
+.page{
+    text-align: left;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.resume{
+    display: block !important;
+    margin: 30px auto !important;;
+}
+
+
+@media only screen and (max-width: 800px){
+
+    .AboutMe {
+        color: black;
+        line-height: 1rem;
+        padding: 2rem;
+        border: 1px solid whitesmoke;
+        background-color: rgba(245, 245, 245, 0.90);
+        border-radius: 0px;
+        height: 65vh;
+        width: 100vw;
+        font-size: 2vw;
+    }
+
+    #ReactBackgroundSlider > figure{
+        height: 70% !important;
+        top: 15vh !important;
+    }
+    
+    .page{
+        text-align: left;
+    }
+    
+    h1{
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+}
