@@ -128,9 +128,10 @@ class App extends Component {
     constructor() {
         super();
         this.state = {
-            index: 0
+            data: null
         }
     }
+
 
     contextRef = createRef()
 
