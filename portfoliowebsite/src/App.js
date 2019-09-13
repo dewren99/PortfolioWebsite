@@ -1,18 +1,21 @@
 import React from 'react';
-import {Component} from 'react';
+import {Component, createRef} from 'react';
 import './App.css';
 import Greeting from './components/greeting/greeting.js';
 import AboutMe from './components/aboutme/aboutme.js'
+import SkillsTable from './components/skillstable/skillstable.js'
+import Scroll from './components/scroll/scroll.js'
 import {Parallax, ParallaxLayer} from 'react-spring/renderprops-addons';
 import {Transition, animated} from 'react-spring/renderprops'
 import Particles from 'react-particles-js';
 
-// import BackgroundSlider from 'react-background-slider'
-// import chessIMG from './slideImg/chess.jpg'
-// import gamingIMG from './slideImg/gaming.jpg'
-// import codingIMG from './slideImg/code.jpg'
+import _ from "lodash";
+import PropTypes from 'prop-types';
+import ReactPageScroller from "react-page-scroller";
+import Button from '@material-ui/core/Button'
+import ButtonGroup from '@material-ui/core/ButtonGroup';
 
-// import {Helmet} from "react-helmet"; const title = `Deniz Evrendilek`;
+import {Image, Input, Menu, Segment, Sticky} from 'semantic-ui-react'
 
 const particleParams = {
     "particles": {
@@ -129,10 +132,11 @@ class App extends Component {
         }
     }
 
+    contextRef = createRef()
+
     render() {
 
         const styles = {
-            // fontFamily: 'Menlo-Regular, Menlo, monospace',
             fontSize: 14,
             lineHeight: '10px',
             color: 'white',
@@ -141,61 +145,73 @@ class App extends Component {
             justifyContent: 'center'
         }
 
+        const buttonStyle = {
+            fontWeight: 'bold',
+            color: 'black',
+            letterSpacing: '3px'
+        }
+
         return (
-            <Parallax ref="parallax" className="App" pages={3} scrolling={true}>
-                <Particles className='particles' params={particleParams} style/>
-                <Parallax.Layer
-                    offset={0}
-                    speed={1}
-                    style={{
-                    backgroundColor: 'black',
-                    opacity: '0.75'
-                }}/>
-                <Parallax.Layer
-                    offset={1}
-                    speed={1}
-                    factor={1}
-                    style={{
-                    backgroundColor: '#606060'
-                }}/>
-                <Parallax.Layer
-                    offset={2}
-                    speed={1}
-                    factor={1}
-                    style={{
-                    backgroundColor: '#4B0082'
-                }}/>
+            <div ref={this.contextRef}>
+                <Sticky context={this.contextRef}>
+                    <Menu
+                        attached='top'
+                        tabular
+                        style={{
+                        backgroundColor: '#cccccc'
+                    }}>
+                        <ButtonGroup fullWidth>
+                            <Button style={buttonStyle} onClick={() => this.refs.parallax.scrollTo(0)}>Me on Social Media</Button>
+                            <Button style={buttonStyle} onClick={() => this.refs.parallax.scrollTo(1)}>Who am I</Button>
+                            <Button style={buttonStyle} onClick={() => this.refs.parallax.scrollTo(2)}>Skills</Button>
+                        </ButtonGroup>
+                    </Menu>
+                </Sticky>
 
-                <Parallax.Layer
-                
-                    offset={0}
-                    speed={0.5}
-                    factor={1}
-                    onClick={() => this.refs.parallax.scrollTo(1)}>
-                    <Greeting/>
-                </Parallax.Layer>
+                <Parallax ref="parallax" className="App" pages={3} scrolling={false}>
 
-                <Parallax.Layer
-                    offset={1}
-                    speed={-0.1}
-                    factor={1}
-                    style={styles}
-                    onClick={() => this.refs.parallax.scrollTo(2)}>
+                    <Particles className='particles' params={particleParams} style/>
 
-                    <AboutMe/>
+                    <Parallax.Layer
+                        offset={0}
+                        speed={1}
+                        style={{
+                        backgroundColor: 'black',
+                        opacity: '0.70'
+                    }}/>
 
-                </Parallax.Layer>
+                    <Parallax.Layer
+                        offset={1}
+                        speed={1}
+                        factor={1}
+                        style={{
+                        backgroundColor: '#606060'
+                    }}/>
 
-                <Parallax.Layer
-                    offset={2}
-                    speed={0.5}
-                    style={styles}
-                    factor={1}
-                    onClick={() => this.refs.parallax.scrollTo(0)}>
-                    SKILLS TABLE
-                </Parallax.Layer>
+                    <Parallax.Layer
+                        offset={2}
+                        speed={1}
+                        factor={1}
+                        style={{
+                        backgroundColor: '#cccccc'
+                    }}/>
+                    <Parallax.Layer offset={0} speed={0.5} factor={1}>
+                        <Greeting/>
+                    </Parallax.Layer>
 
-            </Parallax>
+                    <Parallax.Layer offset={1} speed={-0.1} factor={1} style={styles}>
+
+                        <AboutMe/>
+
+                    </Parallax.Layer>
+
+                    <Parallax.Layer offset={2} speed={0.5} style={styles} factor={1}>
+                        <SkillsTable/>
+                    </Parallax.Layer>
+
+                </Parallax>
+            </div>
+
         );
     }
 }
