@@ -15,7 +15,20 @@ import ReactPageScroller from "react-page-scroller";
 import Button from '@material-ui/core/Button'
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 
-import {Image, Input, Menu, Segment, Sticky} from 'semantic-ui-react'
+import {
+    Container,
+    Divider,
+    Dropdown,
+    Grid,
+    Header,
+    List,
+    Image,
+    Input,
+    Menu,
+    Segment,
+    Sticky
+} from 'semantic-ui-react'
+import zIndex from '@material-ui/core/styles/zIndex';
 
 const particleParams = {
     "particles": {
@@ -132,7 +145,6 @@ class App extends Component {
         }
     }
 
-
     contextRef = createRef()
 
     render() {
@@ -154,6 +166,7 @@ class App extends Component {
 
         return (
             <div ref={this.contextRef}>
+
                 <Sticky context={this.contextRef}>
                     <Menu
                         attached='top'
@@ -186,7 +199,8 @@ class App extends Component {
                         speed={1}
                         factor={1}
                         style={{
-                        backgroundColor: '#606060'
+                        backgroundColor: '#606060',
+                        opacity:'0'
                     }}/>
 
                     <Parallax.Layer

@@ -1,41 +1,41 @@
 .AboutMe {
     color: black;
-    line-height: 1.5rem;
+    line-height: 1.3rem;
     padding: 2.5rem;
     border: 1px solid whitesmoke;
     background-color: rgba(245, 245, 245, 0.90);
     border-radius: 10px;
     height: 65vh;
     width: 50vw;
-    font-size: 1vw;
+    font-size: 1.2vw;
+    overflow: scroll;
 }
 
-#ReactBackgroundSlider > figure{
+#ReactBackgroundSlider > figure {
     height: 80% !important;
     top: 10vh !important;
 }
 
-.page{
+.page {
     text-align: left;
 }
 
-h1{
+h1 {
     text-align: center;
     margin-bottom: 2rem;
 }
 
-a{
+a {
     text-decoration: none;
     color: inherit;
 }
 
-.resume{
+.resume {
     display: block !important;
-    margin: 30px auto !important;;
+    margin: 30px auto !important;
+    font-size: inherit !important;
 }
-
-
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 800px) {
 
     .AboutMe {
         color: black;
@@ -43,24 +43,64 @@ a{
         padding: 2rem;
         border: 1px solid whitesmoke;
         background-color: rgba(245, 245, 245, 0.90);
-        border-radius: 0px;
+        border-radius: 0;
         height: 65vh;
         width: 100vw;
         font-size: 2vw;
     }
 
-    #ReactBackgroundSlider > figure{
-        height: 70% !important;
-        top: 15vh !important;
-    }
-    
-    .page{
+    // #ReactBackgroundSlider > figure {
+    //     height: 90% !important;
+    //     top: 15vh !important;
+    // }
+
+    .page {
         text-align: left;
     }
-    
-    h1{
+
+    h1 {
         text-align: center;
         margin-bottom: 2rem;
     }
 
+    .resume {
+        display: block !important;
+        margin: 20px auto !important;
+        font-size: inherit !important;
+    }
+
+}
+@media only screen and (max-width: 320px) {
+    .AboutMe {
+        color: black;
+        line-height: 1rem;
+        padding: 2rem;
+        border: 1px solid whitesmoke;
+        background-color: rgba(245, 245, 245, 0.90);
+        border-radius: 0;
+        height: 70vh;
+        width: 100vw;
+        font-size: 2vw;
+    }
+
+    // #ReactBackgroundSlider > figure {
+    //     height: 70% !important;
+    //     top: 15vh !important;
+    // }
+
+    .page {
+        text-align: left;
+        overflow-wrap: break-word;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .resume {
+        display: block !important;
+        margin: 5px auto !important;
+        font-size: inherit !important;
+    }
 }

@@ -31,26 +31,24 @@ const AboutMe = () => {
                 <br/>
                 <br/>
                 <p>
-                    I am interested in Artificial Intelligence, Game Devolopment, Web/App
-                    Devolopment, and Quantum Computing and I have been doing both research and
-                    personal projects to appease my hunger for knowladge concerning these areas of
-                    interest. So far, I have gained experience in writing full-stack web
-                    applications and am familiar to Unreal Engine 4. I have also programmed
-                    numerious programs with C/C++ by making use of OOP, various Data Structures and
-                    Search/Sort algorithms.
+                    I am interested in Artificial Intelligence, Game Development, Web/App
+                    Development, and Quantum Computing. I have been doing both research and personal
+                    projects to appease my thirst for knowledge concerning these areas of interest.
+                    So far, I have gained experience in writing full-stack web applications and am
+                    familiar with Unreal Engine 4. I have also implemented numerous programs with
+                    C/C++ by making use of OOP, various data structures, and Search/Sort algorithms.
                 </p>
                 <br/>
                 <br/>
                 <p>
-                    I like watching movies a lot. So, I try to watch atleast one movie per week. I
-                    like to follow the tech news daily and see whats going on in the industry. I
-                    also like playing popular singleplayer and multiplayer games. I used to do a lot
-                    of freehand drawing but not so much these days. Moreover, I enjoy playing chess,
-                    although I would not consider myself a good chess player. Lastly, I like
-                    traveling to new countries and continents and tasting their signiture foods.
+                    I like watching movies at least one movie per week as well as freehand drawing
+                    if time allows me to. I am a daily follower of the tech news to stay updated. I
+                    like playing chess, popular single and/or multiple player games as well as
+                    traveling to new countries and tasting their signature foods.
                 </p>
                 <Button className='resume' variant="outlined" color="inherit">
-                    <a href="https://docs.google.com/document/d/1IX8cDU19_hW2bb_sNlCYNWIAe2fg-Ng5bXu7mVtc2dk/edit?usp=sharing">Resume</a>
+                    <a
+                        href="https://docs.google.com/document/d/10CAb88EGzhcX5cdnub9xTIdz9MyVjqrPCu24aGX3dwg/edit?usp=sharing">Resume</a>
                 </Button>
             </div>
         </div>
